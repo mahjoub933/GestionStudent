@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+{% block title %} LIST Clubs  {% endblock %}
+{% block body %}
+    <table class="table table-striped">
+        <h1> </h1>
+        <tr>
+
+            <td>ID</td>
+            <td>REF</td>
+            <td>Creation_date</td>
+            
+            <td><h5> ACTION/EDIT </h5> </td>
+            <td><h5> ACTION/DELETE </h5> </td>
+        </tr>
+        <tr>
+            {% for i in listeclub %}
+           
+            <td>{{ i.id }}</td>
+            <td>{{ i.REF }}</td>
+            <td>{{ i.creationdate|date('m/d/Y') }}</td>
+            
+            <td>
+                <a type="button" class="btn btn-success" href="{{ path('modifierclub', {'id': i.id}) }}"> EditClub</a>
+            </td>
+            <td>
+                <a type="button" class="btn btn-danger" href="{{ path('deleteclub', {'id': i.id}) }}"> DeleteClub</a>
+
+            </td>
+            </tr>
+         
+{% endfor %}
+ <a type="button" class="btn btn-primary" href="{{ path('AddClub') }}"> ADDClub</a>
+    </table>
+{% endblock %}

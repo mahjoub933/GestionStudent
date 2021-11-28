@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+{% block title %} LIST Students  {% endblock %}
+{% block body %}
+    <table class="table table-striped">
+        <h1> </h1>
+        <tr>
+
+            <td>ID</td>
+            <td>NSC</td>
+            <td>Creation_date</td>
+            <td>CLASSROOM</td>
+            <td><h5> ACTION/EDIT </h5> </td>
+            <td><h5> ACTION/DELETE </h5> </td>
+        </tr>
+        <tr>
+            {% for i in listestudent %}
+           
+            <td>{{ i.id }}</td>
+            <td>{{ i.nsc }}</td>
+            <td>{{ i.email }}</td>
+            <td>{{i.idclass.name}}</td>
+            <td>
+                <a type="button" class="btn btn-success" href="{{ path('modifierstudent', {'id': i.id}) }}"> EditStudent</a>
+            </td>
+            <td>
+                <a type="button" class="btn btn-danger" href="{{ path('deleteStudent', {'id': i.id}) }}"> DeleteStudent</a>
+
+            </td>
+            </tr>
+           
+            
+        
+{% endfor %}
+ <a type="button" class="btn btn-primary" href="{{ path('AddStudent') }}"> ADDStudent</a>
+    </table>
+{% endblock %}

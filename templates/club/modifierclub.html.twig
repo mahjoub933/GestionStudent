@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} modifier Club {% endblock %}
+
+{% block body %}
+    
+     {{ form_start(form , {'attr': {'novalidate': 'novalidate'}}) }}
+    <table>
+    <tr>
+    <td> {{ form_label(form.REF, "modifier votre Reférence :") }} </td>
+   <td> {{ form_widget(form.REF) }} </td>
+   <td> {{ form_errors(form.REF) }} </td>
+   </tr>
+   <tr>
+   <td>  {{ form_label(form.creationdate, "choisissez votre date :") }} </td>
+   <td>  {{ form_widget(form.creationdate) }} </td>
+   <td>  {{ form_errors(form.creationdate) }} </td> 
+    </tr>
+   
+    </table> <br>
+    <button type="submit"class="btn btn-success">UPDATE</button>
+    {{ form_end(form) }}
+{% endblock %}
+

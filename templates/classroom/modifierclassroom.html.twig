@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} modifier classroom {% endblock %}
+
+{% block body %}
+<h3><i class="fa fa-align-center" aria-hidden="true">UPDATE CLASSROOM</i></h3>
+
+    {{ form_start(form ,{'attr': {'novalidate': 'novalidate'}}) }}
+    {{ form_widget(form) }}
+     <button type="submit"class="btn btn-info">make</button>
+    {{ form_end(form) }}
+{% endblock %}

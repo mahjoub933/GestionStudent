@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Ajouter student {% endblock %}
+
+{% block body %}
+    
+    {{ form_start(form , {'attr': {'novalidate': 'novalidate'}}) }}
+    <table>
+    <tr>
+    <td> {{ form_label(form.NSC, "modifier votre numero D'inscription :") }} </td>
+   <td> {{ form_widget(form.NSC) }} </td>
+   <td> {{ form_errors(form.NSC) }} </td>
+   </tr>
+   <tr>
+   <td>  {{ form_label(form.Email, "modifier votre Email :") }} </td>
+   <td>  {{ form_widget(form.Email) }} </td>
+   <td>  {{ form_errors(form.Email) }} </td> 
+    </tr>
+     <tr>
+     <td>  {{ form_label(form.idclass, "choisissez votre classroom :") }} </td>
+    <td>  {{ form_widget(form.idclass) }} </td>
+   <td>  {{ form_errors(form.idclass) }} </td> 
+   </tr>
+    </table>
+    <button type="submit"class="btn btn-success">UPDATE</button>
+    {{ form_end(form) }}
+{% endblock %}
+
